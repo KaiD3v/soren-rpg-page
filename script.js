@@ -269,7 +269,7 @@ const STORY_ACTS = [
     location: "Em Exílio pelo Mundo",
     summary: "A busca por poder sob o estigma Tiefling, a desculpa esfarrapada do orgulho ferido e o preço das almas que compraram seu sangue.",
     content: `
-      <p>Hoje, <strong>Soren ~~Vaelor~~ Alkahest</strong> vaga pelo mundo buscando fortalecer sua alma e aperfeiçoar sua alquimia até que possa destruir Lazare Vaelor, ainda sem saber qual entidade infernal aceitou a alma de seus pais naquele pacto.</p>
+      <p>Hoje, <strong>Soren <span class="slashed-surname">Vaelor</span> Alkahest</strong> vaga pelo mundo buscando fortalecer sua alma e aperfeiçoar sua alquimia até que possa destruir Lazare Vaelor, ainda sem saber qual entidade infernal aceitou a alma de seus pais naquele pacto.</p>
       <p>Perante os outros — e perante si mesmo —, ele sustenta uma mentira racional: afirma que Elian e Lyra eram fracos demais para importar, e que caça Lazare apenas por <strong>orgulho ferido</strong>, porque o velho ousou usá-lo como cobaia e <em>“amaldiçoou seu corpo perfeito com sangue infernal comprado com duas almas baratas”</em>.</p>
       <p>Contudo, toda vez que Soren conjura o fogo ou as sombras de sua herança Tiefling, ele sente o peso do preço que comprou aquele poder — e a primeira coisa que seus dedos tocam após cada combate é o cristal azul do velho <strong>colar arcano</strong>.</p>
     `
