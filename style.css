@@ -52,7 +52,6 @@ body {
   transition: background-color 0.5s ease, color 0.4s ease;
 }
 
-/* Fundo com matriz alquímica sutil */
 .alchemical-backdrop {
   position: fixed;
   inset: 0;
@@ -66,7 +65,6 @@ body {
   transition: background 0.6s ease;
 }
 
-/* Nome Vaelor riscado à faca */
 .slashed-surname {
   position: relative;
   display: inline-block;
@@ -98,7 +96,6 @@ body {
   transform: rotate(4deg);
 }
 
-/* Animação lenta dos anéis alquímicos */
 @keyframes spin-slow {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
@@ -107,11 +104,6 @@ body {
 @keyframes spin-reverse-slow {
   from { transform: rotate(360deg); }
   to { transform: rotate(0deg); }
-}
-
-@keyframes pulse-ember {
-  0%, 100% { opacity: 0.55; filter: drop-shadow(0 0 6px var(--accent-main)); }
-  50% { opacity: 1; filter: drop-shadow(0 0 14px var(--accent-main)); }
 }
 
 .ring-spin {
@@ -124,11 +116,6 @@ body {
   transform-origin: center;
 }
 
-.ember-pulse {
-  animation: pulse-ember 3.5s ease-in-out infinite;
-}
-
-/* Cartões Alquímicos */
 .arcane-card {
   background: var(--bg-glass);
   border: 1px solid var(--border-subtle);
@@ -141,7 +128,6 @@ body {
   border-color: var(--border-strong);
 }
 
-/* Nós da Constelação / Matriz Orbital */
 .orbit-node {
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
@@ -164,7 +150,6 @@ body {
   border-color: var(--accent-main);
 }
 
-/* Linha de conexão SVG */
 .connection-line {
   stroke: rgba(255, 255, 255, 0.14);
   stroke-width: 1.5;
@@ -179,7 +164,6 @@ body {
   filter: drop-shadow(0 0 6px var(--accent-main));
 }
 
-/* Moldura de Retrato */
 .portrait-frame {
   position: relative;
   overflow: hidden;
@@ -207,7 +191,6 @@ body {
   transform: scale(1.04);
 }
 
-/* Barras de progresso de alma */
 .soul-bar-track {
   background: rgba(255, 255, 255, 0.07);
   border: 1px solid rgba(255, 255, 255, 0.12);
@@ -228,7 +211,6 @@ body.soul-truth-mode .soul-bar-fill {
   background: linear-gradient(90deg, #0284c7, #38bdf8, #f59e0b);
 }
 
-/* Abas de navegação */
 .nav-tab {
   border-bottom: 2px solid transparent;
   color: var(--text-secondary);
@@ -244,7 +226,6 @@ body.soul-truth-mode .soul-bar-fill {
   color: var(--accent-main);
 }
 
-/* Scrollbar customizado */
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
@@ -261,10 +242,4 @@ body.soul-truth-mode .soul-bar-fill {
 
 ::-webkit-scrollbar-thumb:hover {
   background: var(--accent-main);
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .ring-spin, .ring-spin-reverse, .ember-pulse {
-    animation: none;
-  }
 }

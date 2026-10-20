@@ -33,7 +33,7 @@
           </h1>
 
           <p class="text-sm md:text-base text-stone-400 mt-2 max-w-2xl">
-            Tiefling Artificial (Quimera de Três Almas) • Mago • Aprendiz Arcano • Alquimista
+            Tiefling (Herança Infernal por Pacto Ritual) • Mago • Aprendiz Arcano • Alquimista
           </p>
         </div>
 
@@ -63,8 +63,8 @@
         <button data-tab="castes" class="nav-tab pb-2.5 px-1 font-semibold cursor-pointer">
           03. A Casa Vaelor & As 4 Castas
         </button>
-        <button data-tab="arcanum" class="nav-tab pb-2.5 px-1 font-semibold cursor-pointer">
-          04. O Arcanum & Alquimia Molecular
+        <button data-tab="maps" class="nav-tab pb-2.5 px-1 font-semibold cursor-pointer">
+          04. Plantas & Mapas da Casa Vaelor
         </button>
       </nav>
     </header>
@@ -75,7 +75,7 @@
     <section id="section-network" class="tab-section space-y-6">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
 
-        <!-- COLUNA ESQUERDA: O ASTROLÁBIO / CÍRCULO DE TRANSMUTAÇÃO ORBITAL (5 Colunas) -->
+        <!-- COLUNA ESQUERDA: O ASTROLÁBIO / CÍRCULO DE TRANSMUTAÇÃO ORBITAL -->
         <div class="lg:col-span-5 arcane-card rounded-2xl p-5 flex flex-col items-center">
           <div class="w-full flex items-center justify-between mb-2">
             <span class="text-xs font-mono uppercase tracking-wider text-stone-400">Círculo de Transmutação</span>
@@ -87,7 +87,6 @@
 
           <!-- Container do Círculo Orbital -->
           <div class="relative w-full max-w-[370px] aspect-square my-2 select-none">
-            <!-- SVG de Anéis Alquímicos e Linhas de Conexão -->
             <svg viewBox="0 0 400 400" class="w-full h-full">
               <defs>
                 <radialGradient id="centerGlow" cx="50%" cy="50%" r="50%">
@@ -96,28 +95,22 @@
                 </radialGradient>
               </defs>
 
-              <!-- Brilho Central -->
               <circle cx="200" cy="200" r="175" fill="url(#centerGlow)" />
 
-              <!-- Anel Externo Giratório -->
               <g class="ring-spin">
                 <circle cx="200" cy="200" r="150" fill="none" stroke="rgba(229, 142, 38, 0.25)" stroke-width="1.5" stroke-dasharray="8 6" />
                 <polygon points="200,50 330,275 70,275" fill="none" stroke="rgba(229, 142, 38, 0.16)" stroke-width="1" />
                 <polygon points="200,350 330,125 70,125" fill="none" stroke="rgba(56, 189, 248, 0.14)" stroke-width="1" />
               </g>
 
-              <!-- Anel Interno Giratório Inverso -->
               <g class="ring-spin-reverse">
                 <circle cx="200" cy="200" r="95" fill="none" stroke="rgba(255, 255, 255, 0.12)" stroke-width="1" />
                 <rect x="133" y="133" width="134" height="134" fill="none" stroke="rgba(229, 142, 38, 0.15)" stroke-width="1" transform="rotate(45 200 200)" />
               </g>
 
-              <!-- Linhas de Conexão Ligadas a Soren (Centro 200,200) -->
-              <!-- Para o Clã (Topo: 200, 52) -->
+              <!-- Linhas de Conexão Ligadas a Soren -->
               <line x1="200" y1="200" x2="200" y2="52" class="connection-line active-line" data-line-to="clan" />
-              <!-- Para os Pais (Inferior Esquerdo: 72, 285) -->
               <line x1="200" y1="200" x2="72" y2="285" class="connection-line active-line" data-line-to="parents" />
-              <!-- Para o Vilão (Inferior Direito: 328, 285) -->
               <line x1="200" y1="200" x2="328" y2="285" class="connection-line active-line" data-line-to="villain" />
             </svg>
 
@@ -185,7 +178,7 @@
               <div class="text-xs font-bold text-stone-100 truncate">Soren Alkahest</div>
             </button>
             <button data-node="parents" class="quick-select-btn p-2.5 rounded-xl border border-white/10 bg-black/30 hover:bg-white/5 text-left transition-all cursor-pointer">
-              <div class="text-[10px] font-mono text-sky-400">OS PAIS (SACRIFÍCIO)</div>
+              <div class="text-[10px] font-mono text-sky-400">OS PAIS (MOEDA DO PACTO)</div>
               <div class="text-xs font-bold text-stone-100 truncate">Elian & Lyra</div>
             </button>
             <button data-node="clan" class="quick-select-btn p-2.5 rounded-xl border border-white/10 bg-black/30 hover:bg-white/5 text-left transition-all cursor-pointer">
@@ -199,7 +192,7 @@
           </div>
         </div>
 
-        <!-- COLUNA DIREITA: INSPETOR VISUAL E PSICOLÓGICO DETALHADO (7 Colunas) -->
+        <!-- COLUNA DIREITA: INSPETOR VISUAL E PSICOLÓGICO DETALHADO -->
         <div class="lg:col-span-7 arcane-card rounded-2xl p-5 md:p-7">
           <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-start">
 
@@ -225,7 +218,7 @@
                   <div id="inspector-soul-bar" class="soul-bar-fill" style="width: 88%"></div>
                 </div>
                 <div id="inspector-soul-label" class="text-[11px] font-mono text-stone-300">
-                  Tríplice Fundida (1 Alma Genial + 2 Almas Sacrificadas)
+                  Alma Expandida por Pacto Infernal (Pago com a Alma dos Pais)
                 </div>
               </div>
             </div>
@@ -246,7 +239,7 @@
                     Soren <span class="slashed-surname">Vaelor</span> Alkahest
                   </h2>
                   <p id="inspector-role" class="text-xs sm:text-sm font-mono text-stone-400 mt-0.5">
-                    O Protagonista • A Quimera de Três Almas
+                    O Protagonista • Tiefling por Pacto Ritual
                   </p>
                 </div>
                 <span id="inspector-symbol" class="text-3xl sm:text-4xl font-serif text-[var(--accent-main)] select-none">
@@ -273,12 +266,99 @@
             </div>
           </div>
 
-          <!-- Diretrizes Visuais (Ideia Visual Completa do Integrante) -->
+          <!-- Diretrizes Visuais -->
           <div class="mt-6 pt-5 border-t border-white/10">
             <h3 class="text-xs font-mono uppercase tracking-widest text-stone-400 mb-3">
               👁️ Diretrizes de Concepção Visual & Detalhes de Cena
             </h3>
             <div id="inspector-visual-list" class="grid grid-cols-1 sm:grid-cols-2 gap-3"></div>
+          </div>
+
+          <!-- FICHA RACIAL OFICIAL DE TIEFLING (Exibida quando Soren está selecionado) -->
+          <div id="soren-racial-sheet" class="mt-6 pt-5 border-t border-white/10 space-y-4">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <h3 class="text-xs font-mono uppercase tracking-widest text-amber-400">
+                🔥 Ficha Racial Oficial: Tiefling (Herança de Pacto Infernal)
+              </h3>
+              <span class="text-[11px] font-mono text-stone-400">Perícias Raciais: 6 Pontos</span>
+            </div>
+
+            <!-- Grade de 10 Atributos Raciais -->
+            <div class="grid grid-cols-2 sm:grid-cols-5 gap-2 text-center">
+              <div class="p-2 rounded-lg bg-black/45 border border-white/10">
+                <div class="text-[10px] font-mono text-stone-400">FORÇA</div>
+                <div class="text-lg font-bold text-stone-200">8</div>
+              </div>
+              <div class="p-2 rounded-lg bg-amber-950/35 border border-amber-500/40">
+                <div class="text-[10px] font-mono text-amber-300">MAGIA</div>
+                <div class="text-lg font-bold text-amber-400">11</div>
+              </div>
+              <div class="p-2 rounded-lg bg-black/45 border border-white/10">
+                <div class="text-[10px] font-mono text-stone-400">DESTREZA</div>
+                <div class="text-lg font-bold text-stone-200">8</div>
+              </div>
+              <div class="p-2 rounded-lg bg-black/45 border border-white/10">
+                <div class="text-[10px] font-mono text-stone-400">AGILIDADE</div>
+                <div class="text-lg font-bold text-stone-200">9</div>
+              </div>
+              <div class="p-2 rounded-lg bg-black/45 border border-white/10">
+                <div class="text-[10px] font-mono text-stone-400">VELOCIDADE</div>
+                <div class="text-lg font-bold text-stone-200">8</div>
+              </div>
+              <div class="p-2 rounded-lg bg-black/45 border border-white/10">
+                <div class="text-[10px] font-mono text-stone-400">DEFESA</div>
+                <div class="text-lg font-bold text-stone-200">8</div>
+              </div>
+              <div class="p-2 rounded-lg bg-black/45 border border-white/10">
+                <div class="text-[10px] font-mono text-stone-400">RES. MÁGICA</div>
+                <div class="text-lg font-bold text-stone-200">9</div>
+              </div>
+              <div class="p-2 rounded-lg bg-black/45 border border-white/10">
+                <div class="text-[10px] font-mono text-stone-400">VITALIDADE</div>
+                <div class="text-lg font-bold text-stone-200">8</div>
+              </div>
+              <div class="p-2 rounded-lg bg-amber-950/25 border border-amber-500/30">
+                <div class="text-[10px] font-mono text-amber-300">ALMA</div>
+                <div class="text-lg font-bold text-amber-300">9</div>
+              </div>
+              <div class="p-2 rounded-lg bg-amber-950/35 border border-amber-500/40">
+                <div class="text-[10px] font-mono text-amber-300">VIGOR</div>
+                <div class="text-lg font-bold text-amber-400">10</div>
+              </div>
+            </div>
+
+            <!-- Perícias Raciais -->
+            <div class="flex flex-wrap gap-2">
+              <span class="px-2.5 py-1 rounded-lg bg-amber-500/15 border border-amber-500/35 text-xs font-mono text-amber-200">✴️ Conjuração <strong>+2</strong></span>
+              <span class="px-2.5 py-1 rounded-lg bg-white/5 border border-white/15 text-xs font-mono text-stone-200">💀 Intimidação <strong>+1</strong></span>
+              <span class="px-2.5 py-1 rounded-lg bg-white/5 border border-white/15 text-xs font-mono text-stone-200">🎭 Atuação <strong>+1</strong></span>
+              <span class="px-2.5 py-1 rounded-lg bg-white/5 border border-white/15 text-xs font-mono text-stone-200">📖 Conhecimento <strong>+1</strong></span>
+              <span class="px-2.5 py-1 rounded-lg bg-white/5 border border-white/15 text-xs font-mono text-stone-200">👁️ Percepção <strong>+1</strong></span>
+            </div>
+
+            <!-- Habilidades e Fraquezas Raciais -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs">
+              <div class="p-2.5 rounded-lg bg-orange-950/30 border border-orange-500/30">
+                <div class="font-bold text-orange-300">🔥 Resistência Infernal</div>
+                <div class="text-stone-300 mt-0.5">Recebe 50% a menos de dano de fogo.</div>
+              </div>
+              <div class="p-2.5 rounded-lg bg-red-950/30 border border-red-500/30">
+                <div class="font-bold text-red-300">💀 Presença Infernal</div>
+                <div class="text-stone-300 mt-0.5">Vantagem em testes de Intimidação; aparência impõe respeito e desconforto.</div>
+              </div>
+              <div class="p-2.5 rounded-lg bg-purple-950/30 border border-purple-500/30">
+                <div class="font-bold text-purple-300">🌑 Herança Sombria</div>
+                <div class="text-stone-300 mt-0.5">Vantagem em testes de Conjuração ligados à magia sombria.</div>
+              </div>
+              <div class="p-2.5 rounded-lg bg-stone-900/80 border border-white/15">
+                <div class="font-bold text-amber-200">👁️ Visão no Escuro</div>
+                <div class="text-stone-300 mt-0.5">Enxerga normalmente em ambientes com pouca ou nenhuma luz.</div>
+              </div>
+              <div class="sm:col-span-2 p-2.5 rounded-lg bg-yellow-950/30 border border-yellow-500/40">
+                <div class="font-bold text-yellow-300">☀️ Fraqueza Racial — Vulnerabilidade à Luz</div>
+                <div class="text-stone-300 mt-0.5">Recebe o dobro do dano causado por magia de luz.</div>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -328,67 +408,44 @@
     </section>
 
     <!-- ======================================================================
-         ABA 04: A LEI DO ARCANUM & SIMULADOR DE ALQUIMIA MOLECULAR
+         ABA 04: PLANTAS & MAPAS DA CASA VAELOR (ATLAS ARQUITETÔNICO)
          ====================================================================== -->
-    <section id="section-arcanum" class="tab-section hidden space-y-6">
-      <!-- Os 3 Pilares do Arcanum -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <div class="arcane-card rounded-2xl p-5">
-          <div class="text-xs font-mono text-amber-400 uppercase mb-1">Pilar I • A Força Primordial</div>
-          <h4 class="text-lg font-bold font-serif text-stone-100 mb-2">Mais Antigo que os Deuses</h4>
-          <p class="text-sm text-stone-300 leading-relaxed">
-            O <strong>Arcanum</strong> não é uma divindade nem possui consciência. É a força implacável da natureza que originou o universo. Tudo existe por conta dele e todo ser vivo o carrega dentro de si.
-          </p>
-        </div>
-
-        <div class="arcane-card rounded-2xl p-5">
-          <div class="text-xs font-mono text-sky-400 uppercase mb-1">Pilar II • Lei da Conservação</div>
-          <h4 class="text-lg font-bold font-serif text-stone-100 mb-2">Nada se Cria, Tudo se Altera</h4>
-          <p class="text-sm text-stone-300 leading-relaxed">
-            Um mago jamais cria fogo do vazio; ele agita as moléculas de ar existentes até entrarem em combustão. Por isso a <strong>Alquimia</strong> torna Soren tão letal: ele conhece a química exata da matéria.
-          </p>
-        </div>
-
-        <div class="arcane-card rounded-2xl p-5">
-          <div class="text-xs font-mono text-red-400 uppercase mb-1">Pilar III • O Preço Espiritual</div>
-          <h4 class="text-lg font-bold font-serif text-stone-100 mb-2">A Moeda é a Alma</h4>
-          <p class="text-sm text-stone-300 leading-relaxed">
-            Toda alteração exige pagamento em alma. Assim como um músculo, a alma se fortalece com treino, e filhos de magos nascem com mais alma. Quem conjura além da própria alma morre instantaneamente.
-          </p>
-        </div>
-      </div>
-
-      <!-- Simulador de Fórmulas de Soren -->
+    <section id="section-maps" class="tab-section hidden space-y-6">
       <div class="arcane-card rounded-2xl p-6">
-        <div class="mb-5">
-          <span class="text-xs font-mono uppercase tracking-widest text-amber-400">Grimório Técnico de Soren</span>
-          <h3 class="text-2xl font-bold font-serif text-stone-100 mt-1">
-            Alquimia Aplicada ao Arcanum
-          </h3>
-          <p class="text-sm text-stone-400 mt-1">
-            Veja como Soren combina reagentes físicos com as três almas em seu peito para conjurar feitiços sem destruir o próprio corpo.
-          </p>
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-5">
+          <div>
+            <span class="text-xs font-mono uppercase tracking-widest text-amber-400">
+              🗺️ Cartografia & Plantas Táticas (RPG)
+            </span>
+            <h3 class="text-2xl md:text-3xl font-bold font-serif text-stone-100 mt-1">
+              Atlas Arquitetônico da Casa Vaelor
+            </h3>
+            <p class="text-sm text-stone-400 mt-1 max-w-3xl">
+              Explore o mapa completo em corte vertical da montanha e as plantas detalhadas de cada andar (Pico do Éter, Salões de Mercúrio e Subterrâneo de Enxofre / Pacto Quimera). Clique nos marcadores numerados para inspecionar cada sala.
+            </p>
+          </div>
         </div>
 
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
-          <div id="alchemy-formula-list" class="lg:col-span-4 grid grid-cols-1 gap-2.5"></div>
-          <div id="alchemy-formula-display" class="lg:col-span-8"></div>
-        </div>
+        <!-- Barra Seletora de Mapas (Mapa Completo + 3 Plantas por Área) -->
+        <div id="maps-selector-bar" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 mb-6"></div>
+
+        <!-- Visualizador Principal de Mapas e Setores -->
+        <div id="maps-main-viewer"></div>
       </div>
     </section>
 
   </div>
 
-  <!-- MODAL LIGHTBOX PARA AMPLIAR AS ARTES -->
+  <!-- MODAL LIGHTBOX PARA AMPLIAR AS ARTES E MAPAS -->
   <div id="image-lightbox" class="fixed inset-0 z-50 bg-black/90 hidden items-center justify-center p-4 backdrop-blur-md">
-    <div class="relative max-w-3xl w-full flex flex-col items-center">
+    <div class="relative max-w-5xl w-full flex flex-col items-center">
       <button
         id="close-lightbox-btn"
         class="self-end mb-2 px-3 py-1.5 rounded-lg bg-white/10 hover:bg-white/20 text-xs font-mono text-stone-200 cursor-pointer"
       >
         ✕ Fechar Visualização
       </button>
-      <img id="lightbox-img" src="" alt="Visualização Ampliada" class="max-h-[80vh] w-auto rounded-xl border border-white/20 shadow-2xl" />
+      <img id="lightbox-img" src="" alt="Visualização Ampliada" class="max-h-[82vh] w-auto rounded-xl border border-white/20 shadow-2xl" />
       <p id="lightbox-caption" class="mt-3 text-sm font-mono text-stone-300 text-center"></p>
     </div>
   </div>
