@@ -31,15 +31,15 @@ const DOSSIER_NODES = {
     visualGuide: [
       {
         label: "Fisionomia & Presença Infernal",
-        text: "Jovem (18–20 anos), estatura mediana, físico esguio e atraente. Carrega uma presença imponente que impõe respeito e causa desconforto imediato (Vantagem em Intimidação)."
+        text: "Jovem (18–20 anos), estatura mediana, físico esguio e atraente. Carrega uma presença imponente e fria que impõe respeito e causa desconforto por onde passa."
       },
       {
         label: "Marcas do Sangue Infernal (Tiefling)",
-        text: "Pele pálida acinzentada com nuances rubras, cauda fina sob o sobretudo, chifres escuros estriados e olhos em brasa com Visão no Escuro total. Seu sangue lhe dá 50% de resistência ao fogo, mas o dobro de dano contra magia de Luz."
+        text: "Pele pálida acinzentada com nuances rubras, cauda fina sob o sobretudo, chifres escuros estriados e olhos em brasa capazes de enxergar na escuridão absoluta."
       },
       {
         label: "Trajes, Fogo & Sombras",
-        text: "Sobretudo escuro de gola alta da elite Vaelor (com as insígnias arrancadas), bandoleiras de reagentes alquímicos e um domínio inato sobre o fogo e a magia sombria (Herança Sombria)."
+        text: "Sobretudo escuro de gola alta da elite Vaelor (com as insígnias arrancadas), bandoleiras de reagentes alquímicos e um poder inato ligado ao fogo e às sombras."
       },
       {
         label: "O Detalhe Inconsciente",
