@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dossiê Arcano: Soren [Vaelor] Alkahest</title>
+  <script src="https://www.gstatic.com/antigravity/web/dev/tailwindcss.min.js"></script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="min-h-screen relative selection:bg-amber-500/30 selection:text-amber-200">
+
+  <!-- Plano de fundo atmosférico -->
+  <div class="alchemical-backdrop"></div>
+
+  <!-- Conteúdo Principal -->
+  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 md:py-10">
+
+    <!-- CABEÇALHO DO GRIMÓRIO -->
+    <header class="arcane-card rounded-2xl p-5 md:p-7 mb-6 border border-white/15">
+      <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
+        <div>
+          <div class="flex flex-wrap items-center gap-2 mb-2">
+            <span class="text-xs font-mono uppercase tracking-widest px-2.5 py-1 rounded bg-white/5 border border-white/10 text-amber-400">
+              🜍 Grimório & Dossiê Interativo
+            </span>
+            <span id="mode-status-badge" class="text-xs font-mono tracking-wider px-2.5 py-1 rounded bg-amber-500/20 text-amber-300 border border-amber-400/40">
+              LENTE ATIVA: MÁSCARA DO EGO (A DESCULPA RACIONAL)
+            </span>
+          </div>
+
+          <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight font-serif text-stone-100">
+            Soren <span class="slashed-surname" title="Nome do clã riscado à faca após o exílio">Vaelor</span> Alkahest
+          </h1>
+
+          <p class="text-sm md:text-base text-stone-400 mt-2 max-w-2xl">
+            Tiefling Artificial (Quimera de Três Almas) • Mago • Aprendiz Arcano • Alquimista
+          </p>
+        </div>
+
+        <!-- Botão Interativo: Alternar Lente Psicológica (Ego vs. Verdade do Colar) -->
+        <div class="flex flex-col sm:flex-row lg:flex-col items-stretch sm:items-center lg:items-end gap-2.5">
+          <button
+            id="toggle-truth-btn"
+            class="px-4 py-3 rounded-xl font-mono text-xs sm:text-sm font-semibold transition-all duration-300 flex items-center justify-center gap-2.5 bg-gradient-to-r from-amber-500/20 via-sky-500/20 to-sky-500/30 hover:from-amber-500/30 hover:to-sky-500/40 border border-sky-400/50 text-stone-100 shadow-lg cursor-pointer"
+          >
+            <span class="text-lg">💎</span>
+            <span id="mode-btn-text">Ativar Ressonância do Colar (Ver a Verdade)</span>
+          </button>
+          <p id="mode-description-banner" class="text-xs text-stone-400 max-w-md lg:text-right">
+            <span class="text-amber-400 font-semibold">🜍 Modo Máscara do Ego:</span> Exibindo a visão fria e elitista que Soren apresenta ao mundo (e a desculpa esfarrapada que ele conta a si mesmo).
+          </p>
+        </div>
+      </div>
+
+      <!-- Abas de Navegação do Dossiê -->
+      <nav class="flex flex-wrap gap-2 sm:gap-6 mt-6 pt-4 border-t border-white/10 text-xs sm:text-sm font-mono">
+        <button data-tab="network" class="nav-tab active-tab pb-2.5 px-1 font-semibold cursor-pointer">
+          01. Matriz Visual (Soren, Pais, Clã & Vilão)
+        </button>
+        <button data-tab="story" class="nav-tab pb-2.5 px-1 font-semibold cursor-pointer">
+          02. História Completa (5 Atos)
+        </button>
+        <button data-tab="castes" class="nav-tab pb-2.5 px-1 font-semibold cursor-pointer">
+          03. A Casa Vaelor & As 4 Castas
+        </button>
+        <button data-tab="arcanum" class="nav-tab pb-2.5 px-1 font-semibold cursor-pointer">
+          04. O Arcanum & Alquimia Molecular
+        </button>
+      </nav>
+    </header>
+
+    <!-- ======================================================================
+         ABA 01: MATRIZ VISUAL & PERSONAGENS (TUDO GIRANDO EM TORNO DE SOREN)
+         ====================================================================== -->
+    <section id="section-network" class="tab-section space-y-6">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+
+        <!-- COLUNA ESQUERDA: O ASTROLÁBIO / CÍRCULO DE TRANSMUTAÇÃO ORBITAL (5 Colunas) -->
+        <div class="lg:col-span-5 arcane-card rounded-2xl p-5 flex flex-col items-center">
+          <div class="w-full flex items-center justify-between mb-2">
+            <span class="text-xs font-mono uppercase tracking-wider text-stone-400">Círculo de Transmutação</span>
+            <span class="text-xs font-mono text-[var(--accent-main)]">Clique em um Nó</span>
+          </div>
+          <p class="text-xs text-stone-400 mb-4 text-center">
+            Todos os elementos da história orbitam e alimentam a existência de <strong>Soren Alkahest</strong>.
+          </p>
+
+          <!-- Container do Círculo Orbital -->
+          <div class="relative w-full max-w-[370px] aspect-square my-2 select-none">
+            <!-- SVG de Anéis Alquímicos e Linhas de Conexão -->
+            <svg viewBox="0 0 400 400" class="w-full h-full">
+              <defs>
+                <radialGradient id="centerGlow" cx="50%" cy="50%" r="50%">
+                  <stop offset="0%" stop-color="rgba(229, 142, 38, 0.28)" />
+                  <stop offset="100%" stop-color="rgba(9, 10, 15, 0)" />
+                </radialGradient>
+              </defs>
+
+              <!-- Brilho Central -->
+              <circle cx="200" cy="200" r="175" fill="url(#centerGlow)" />
+
+              <!-- Anel Externo Giratório -->
+              <g class="ring-spin">
+                <circle cx="200" cy="200" r="150" fill="none" stroke="rgba(229, 142, 38, 0.25)" stroke-width="1.5" stroke-dasharray="8 6" />
+                <polygon points="200,50 330,275 70,275" fill="none" stroke="rgba(229, 142, 38, 0.16)" stroke-width="1" />
+                <polygon points="200,350 330,125 70,125" fill="none" stroke="rgba(56, 189, 248, 0.14)" stroke-width="1" />
+              </g>
+
+              <!-- Anel Interno Giratório Inverso -->
+              <g class="ring-spin-reverse">
+                <circle cx="200" cy="200" r="95" fill="none" stroke="rgba(255, 255, 255, 0.12)" stroke-width="1" />
+                <rect x="133" y="133" width="134" height="134" fill="none" stroke="rgba(229, 142, 38, 0.15)" stroke-width="1" transform="rotate(45 200 200)" />
+              </g>
+
+              <!-- Linhas de Conexão Ligadas a Soren (Centro 200,200) -->
+              <!-- Para o Clã (Topo: 200, 52) -->
+              <line x1="200" y1="200" x2="200" y2="52" class="connection-line active-line" data-line-to="clan" />
+              <!-- Para os Pais (Inferior Esquerdo: 72, 285) -->
+              <line x1="200" y1="200" x2="72" y2="285" class="connection-line active-line" data-line-to="parents" />
+              <!-- Para o Vilão (Inferior Direito: 328, 285) -->
+              <line x1="200" y1="200" x2="328" y2="285" class="connection-line active-line" data-line-to="villain" />
+            </svg>
+
+            <!-- NÓ CENTRAL: SOREN ALKAHEST -->
+            <div
+              data-node="soren"
+              style="left: 50%; top: 50%;"
+              class="orbit-node active-node absolute -translate-x-1/2 -translate-y-1/2 flex flex-col items-center z-20"
+            >
+              <div class="node-avatar-ring w-24 h-24 sm:w-28 sm:h-28 rounded-full overflow-hidden border-2 border-amber-400 bg-stone-900 transition-all duration-300 relative">
+                <img data-img-key="soren" alt="Soren Alkahest" class="w-full h-full object-cover object-top" />
+              </div>
+              <span class="node-label mt-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-mono border border-white/20 bg-stone-900/90 text-stone-100 whitespace-nowrap shadow">
+                🜍 Soren (Centro)
+              </span>
+            </div>
+
+            <!-- NÓ TOPO: O CLÃ (CASA VAELOR) -->
+            <div
+              data-node="clan"
+              style="left: 50%; top: 13%;"
+              class="orbit-node absolute -translate-x-1/2 -translate-y-1/2 flex flex-col items-center z-10"
+            >
+              <div class="node-avatar-ring w-16 h-16 sm:w-20 sm:h-20 rounded-full overflow-hidden border-2 border-white/30 bg-stone-900 transition-all duration-300">
+                <img data-img-key="clan" alt="A Casa Vaelor" class="w-full h-full object-cover" />
+              </div>
+              <span class="node-label mt-1 px-2 py-0.5 rounded-full text-[10px] font-mono border border-white/20 bg-stone-900/90 text-stone-200 whitespace-nowrap shadow">
+                🜚 O Clã Vaelor
+              </span>
+            </div>
+
+            <!-- NÓ INFERIOR ESQUERDO: OS PAIS (ELIAN & LYRA) -->
+            <div
+              data-node="parents"
+              style="left: 18%; top: 73%;"
+              class="orbit-node absolute -translate-x-1/2 -translate-y-1/2 flex flex-col items-center z-10"
+            >
+              <div class="node-avatar-ring w-16 h-16 sm:w-20 sm:h-20 rounded-full overflow-hidden border-2 border-white/30 bg-stone-900 transition-all duration-300">
+                <img data-img-key="parents" alt="Elian e Lyra" class="w-full h-full object-cover object-top" />
+              </div>
+              <span class="node-label mt-1 px-2 py-0.5 rounded-full text-[10px] font-mono border border-white/20 bg-stone-900/90 text-stone-200 whitespace-nowrap shadow">
+                🜂 Os Pais (Elian & Lyra)
+              </span>
+            </div>
+
+            <!-- NÓ INFERIOR DIREITO: O VILÃO (LAZARE VAELOR) -->
+            <div
+              data-node="villain"
+              style="left: 82%; top: 73%;"
+              class="orbit-node absolute -translate-x-1/2 -translate-y-1/2 flex flex-col items-center z-10"
+            >
+              <div class="node-avatar-ring w-16 h-16 sm:w-20 sm:h-20 rounded-full overflow-hidden border-2 border-white/30 bg-stone-900 transition-all duration-300">
+                <img data-img-key="villain" alt="Lazare Vaelor" class="w-full h-full object-cover object-top" />
+              </div>
+              <span class="node-label mt-1 px-2 py-0.5 rounded-full text-[10px] font-mono border border-white/20 bg-stone-900/90 text-stone-200 whitespace-nowrap shadow">
+                🜔 O Vilão (Lazare)
+              </span>
+            </div>
+          </div>
+
+          <!-- Seletor Rápido em Grade -->
+          <div class="w-full grid grid-cols-2 gap-2.5 mt-4 pt-4 border-t border-white/10">
+            <button data-node="soren" class="quick-select-btn p-2.5 rounded-xl border border-[var(--accent-main)] bg-white/10 text-left transition-all cursor-pointer">
+              <div class="text-[10px] font-mono text-amber-400">PROTAGONISTA</div>
+              <div class="text-xs font-bold text-stone-100 truncate">Soren Alkahest</div>
+            </button>
+            <button data-node="parents" class="quick-select-btn p-2.5 rounded-xl border border-white/10 bg-black/30 hover:bg-white/5 text-left transition-all cursor-pointer">
+              <div class="text-[10px] font-mono text-sky-400">OS PAIS (SACRIFÍCIO)</div>
+              <div class="text-xs font-bold text-stone-100 truncate">Elian & Lyra</div>
+            </button>
+            <button data-node="clan" class="quick-select-btn p-2.5 rounded-xl border border-white/10 bg-black/30 hover:bg-white/5 text-left transition-all cursor-pointer">
+              <div class="text-[10px] font-mono text-yellow-400">O CLÃ (DOUTRINA)</div>
+              <div class="text-xs font-bold text-stone-100 truncate">Casa Vaelor</div>
+            </button>
+            <button data-node="villain" class="quick-select-btn p-2.5 rounded-xl border border-white/10 bg-black/30 hover:bg-white/5 text-left transition-all cursor-pointer">
+              <div class="text-[10px] font-mono text-red-400">O VILÃO (PATRIARCA)</div>
+              <div class="text-xs font-bold text-stone-100 truncate">Lazare Vaelor</div>
+            </button>
+          </div>
+        </div>
+
+        <!-- COLUNA DIREITA: INSPETOR VISUAL E PSICOLÓGICO DETALHADO (7 Colunas) -->
+        <div class="lg:col-span-7 arcane-card rounded-2xl p-5 md:p-7">
+          <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-start">
+
+            <!-- Retrato Visual -->
+            <div class="md:col-span-5">
+              <div class="portrait-frame rounded-xl aspect-[3/4] bg-stone-950 relative group">
+                <img id="inspector-portrait" src="assets/soren.jpg" alt="Retrato" class="portrait-img" />
+                <button
+                  id="expand-portrait-btn"
+                  class="absolute bottom-3 right-3 z-20 px-3 py-1.5 rounded-lg bg-black/80 hover:bg-black text-xs font-mono text-stone-200 border border-white/20 flex items-center gap-1.5 backdrop-blur-md transition cursor-pointer"
+                >
+                  <span>🔍</span> Ampliar Arte
+                </button>
+              </div>
+
+              <!-- Medidor de Densidade de Alma -->
+              <div class="mt-4 p-3.5 rounded-xl bg-black/40 border border-white/10">
+                <div class="flex items-center justify-between text-xs font-mono mb-1.5">
+                  <span class="text-stone-400">DENSIDADE ANÍMICA</span>
+                  <span id="inspector-soul-percent" class="text-[var(--accent-main)] font-bold">88%</span>
+                </div>
+                <div class="soul-bar-track mb-2">
+                  <div id="inspector-soul-bar" class="soul-bar-fill" style="width: 88%"></div>
+                </div>
+                <div id="inspector-soul-label" class="text-[11px] font-mono text-stone-300">
+                  Tríplice Fundida (1 Alma Genial + 2 Almas Sacrificadas)
+                </div>
+              </div>
+            </div>
+
+            <!-- Informações, Psicologia e Guia Visual -->
+            <div class="md:col-span-7 space-y-4">
+              <div class="flex items-start justify-between gap-3 border-b border-white/10 pb-3">
+                <div>
+                  <div class="flex items-center gap-2">
+                    <span id="inspector-caste" class="text-xs font-mono px-2 py-0.5 rounded bg-white/10 text-amber-300">
+                      Ex-Casta do Mercúrio
+                    </span>
+                    <span id="inspector-symbol-name" class="text-xs font-mono text-stone-400">
+                      Alkahest
+                    </span>
+                  </div>
+                  <h2 id="inspector-title" class="text-2xl sm:text-3xl font-bold font-serif text-stone-100 mt-1">
+                    Soren <span class="slashed-surname">Vaelor</span> Alkahest
+                  </h2>
+                  <p id="inspector-role" class="text-xs sm:text-sm font-mono text-stone-400 mt-0.5">
+                    O Protagonista • A Quimera de Três Almas
+                  </p>
+                </div>
+                <span id="inspector-symbol" class="text-3xl sm:text-4xl font-serif text-[var(--accent-main)] select-none">
+                  🜍
+                </span>
+              </div>
+
+              <!-- Como Gira em Torno de Soren -->
+              <div class="p-3.5 rounded-xl bg-white/5 border border-white/10">
+                <div class="text-xs font-mono uppercase tracking-wider text-stone-400 mb-1">
+                  🔗 Papel na Trajetória de Soren
+                </div>
+                <p id="inspector-relation" class="text-sm text-stone-200 leading-relaxed"></p>
+              </div>
+
+              <!-- Bloco Dinâmico: A Desculpa Esfarrapada vs. A Verdade Oculta -->
+              <div class="p-4 rounded-xl bg-black/45 border border-white/15">
+                <div id="perspective-label" class="text-xs font-mono uppercase tracking-wider mb-1">
+                  🜍 <span class="text-amber-300">O que Soren diz ao mundo (A Desculpa Racional):</span>
+                </div>
+                <blockquote id="inspector-quote"></blockquote>
+                <p id="inspector-analysis" class="text-xs sm:text-sm text-stone-300 leading-relaxed mt-2"></p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Diretrizes Visuais (Ideia Visual Completa do Integrante) -->
+          <div class="mt-6 pt-5 border-t border-white/10">
+            <h3 class="text-xs font-mono uppercase tracking-widest text-stone-400 mb-3">
+              👁️ Diretrizes de Concepção Visual & Detalhes de Cena
+            </h3>
+            <div id="inspector-visual-list" class="grid grid-cols-1 sm:grid-cols-2 gap-3"></div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         ABA 02: HISTÓRIA COMPLETA (CRÔNICA EM 5 ATOS)
+         ====================================================================== -->
+    <section id="section-story" class="tab-section hidden">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+        <div class="lg:col-span-4 arcane-card rounded-2xl p-4 space-y-2.5">
+          <div class="text-xs font-mono uppercase tracking-wider text-stone-400 px-1 mb-2">
+            Capítulos da Lore
+          </div>
+          <div id="story-acts-nav" class="space-y-2.5"></div>
+        </div>
+
+        <div class="lg:col-span-8 arcane-card rounded-2xl p-6 md:p-8">
+          <div id="story-act-content"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         ABA 03: A CASA VAELOR & A PIRÂMIDE DE CASTAS
+         ====================================================================== -->
+    <section id="section-castes" class="tab-section hidden">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+        <div class="lg:col-span-7 arcane-card rounded-2xl p-6">
+          <div class="mb-5">
+            <span class="text-xs font-mono uppercase tracking-widest text-amber-400">Eugenismo Anímico</span>
+            <h3 class="text-2xl font-bold font-serif text-stone-100 mt-1">
+              A Pirâmide de Castas da Casa Vaelor
+            </h3>
+            <p class="text-sm text-stone-400 mt-1">
+              Clique em cada escalão da montanha para inspecionar como o clã classifica o valor da vida humana pela densidade da alma.
+            </p>
+          </div>
+          <div id="caste-pyramid-list" class="space-y-3"></div>
+        </div>
+
+        <div class="lg:col-span-5 arcane-card rounded-2xl p-6">
+          <div id="caste-detail-box"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         ABA 04: A LEI DO ARCANUM & SIMULADOR DE ALQUIMIA MOLECULAR
+         ====================================================================== -->
+    <section id="section-arcanum" class="tab-section hidden space-y-6">
+      <!-- Os 3 Pilares do Arcanum -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div class="arcane-card rounded-2xl p-5">
+          <div class="text-xs font-mono text-amber-400 uppercase mb-1">Pilar I • A Força Primordial</div>
+          <h4 class="text-lg font-bold font-serif text-stone-100 mb-2">Mais Antigo que os Deuses</h4>
+          <p class="text-sm text-stone-300 leading-relaxed">
+            O <strong>Arcanum</strong> não é uma divindade nem possui consciência. É a força implacável da natureza que originou o universo. Tudo existe por conta dele e todo ser vivo o carrega dentro de si.
+          </p>
+        </div>
+
+        <div class="arcane-card rounded-2xl p-5">
+          <div class="text-xs font-mono text-sky-400 uppercase mb-1">Pilar II • Lei da Conservação</div>
+          <h4 class="text-lg font-bold font-serif text-stone-100 mb-2">Nada se Cria, Tudo se Altera</h4>
+          <p class="text-sm text-stone-300 leading-relaxed">
+            Um mago jamais cria fogo do vazio; ele agita as moléculas de ar existentes até entrarem em combustão. Por isso a <strong>Alquimia</strong> torna Soren tão letal: ele conhece a química exata da matéria.
+          </p>
+        </div>
+
+        <div class="arcane-card rounded-2xl p-5">
+          <div class="text-xs font-mono text-red-400 uppercase mb-1">Pilar III • O Preço Espiritual</div>
+          <h4 class="text-lg font-bold font-serif text-stone-100 mb-2">A Moeda é a Alma</h4>
+          <p class="text-sm text-stone-300 leading-relaxed">
+            Toda alteração exige pagamento em alma. Assim como um músculo, a alma se fortalece com treino, e filhos de magos nascem com mais alma. Quem conjura além da própria alma morre instantaneamente.
+          </p>
+        </div>
+      </div>
+
+      <!-- Simulador de Fórmulas de Soren -->
+      <div class="arcane-card rounded-2xl p-6">
+        <div class="mb-5">
+          <span class="text-xs font-mono uppercase tracking-widest text-amber-400">Grimório Técnico de Soren</span>
+          <h3 class="text-2xl font-bold font-serif text-stone-100 mt-1">
+            Alquimia Aplicada ao Arcanum
+          </h3>
+          <p class="text-sm text-stone-400 mt-1">
+            Veja como Soren combina reagentes físicos com as três almas em seu peito para conjurar feitiços sem destruir o próprio corpo.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+          <div id="alchemy-formula-list" class="lg:col-span-4 grid grid-cols-1 gap-2.5"></div>
+          <div id="alchemy-formula-display" class="lg:col-span-8"></div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- MODAL LIGHTBOX PARA AMPLIAR AS ARTES -->
+  <div id="image-lightbox" class="fixed inset-0 z-50 bg-black/90 hidden items-center justify-center p-4 backdrop-blur-md">
+    <div class="relative max-w-3xl w-full flex flex-col items-center">
+      <button
+        id="close-lightbox-btn"
+        class="self-end mb-2 px-3 py-1.5 rounded-lg bg-white/10 hover:bg-white/20 text-xs font-mono text-stone-200 cursor-pointer"
+      >
+        ✕ Fechar Visualização
+      </button>
+      <img id="lightbox-img" src="" alt="Visualização Ampliada" class="max-h-[80vh] w-auto rounded-xl border border-white/20 shadow-2xl" />
+      <p id="lightbox-caption" class="mt-3 text-sm font-mono text-stone-300 text-center"></p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
